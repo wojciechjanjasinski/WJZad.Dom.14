@@ -3,12 +3,13 @@ package CountryCodes;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CountryMapReader {
     static String fileName = "CountriesInfo.csv";
-    public static HashMap<String, Country> fromFileToMap() throws FileNotFoundException {
-        HashMap<String, Country> hashMapOfCountries = new HashMap<>();
+    public static Map<String, Country> fromFileToMap() throws FileNotFoundException {
+        Map<String, Country> hashMapOfCountries = new HashMap<>();
         Scanner scanner = new Scanner(new File(fileName));
         while (scanner.hasNextLine()){
             String[] columns = scanner.nextLine().split(";");

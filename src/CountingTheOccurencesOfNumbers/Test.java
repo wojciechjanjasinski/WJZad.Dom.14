@@ -5,20 +5,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import static CountingTheOccurencesOfNumbers.ConvertUtils.convertIntegerList;
+
 public class Test {
     public static void main(String[] args) throws IOException {
-        List<Integer> integerTestList = NumbersReader.transformFromListOfStringsToListOfIntegers();
         Map<Integer, Integer> testMap = new TreeMap<>();
-        for (Integer numbersToGetConverted : integerTestList) {
-            Integer count = testMap.get(numbersToGetConverted);
-            if (count == null)
-                count = 0;
-            testMap.put(numbersToGetConverted, count + 1);
-        }
+        convertIntegerList(testMap);
         for (Map.Entry<Integer, Integer> entry : testMap.entrySet()) {
             System.out.println(entry.getKey() + " – liczba wystąpień: " + entry.getValue());
         }
     }
+
+
 }
 
 
