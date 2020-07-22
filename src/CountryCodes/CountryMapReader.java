@@ -5,15 +5,16 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class ReadFromFileToMap {
+public class CountryMapReader {
     static String fileName = "CountriesInfo.csv";
-    public static void fromFileToMap(HashMap<String, Country> hashMapFromUser) throws FileNotFoundException {
+    public static HashMap<String, Country> fromFileToMap() throws FileNotFoundException {
+        HashMap<String, Country> hashMapOfCountries = new HashMap<>();
         Scanner scanner = new Scanner(new File(fileName));
         while (scanner.hasNextLine()){
             String[] columns = scanner.nextLine().split(";");
             double numberOfCitizens = Double.parseDouble(columns[2]);
-            hashMapFromUser.put(columns[0], new Country(columns[0], columns[1], numberOfCitizens));
+            hashMapOfCountries.put(columns[0], new Country(columns[0], columns[1], numberOfCitizens));
         }
-        System.out.println(hashMapFromUser);
+        return hashMapOfCountries;
     }
 }

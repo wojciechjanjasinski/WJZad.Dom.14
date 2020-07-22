@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 public class Test {
     public static void main(String[] args) throws IOException {
-        List<Integer> integerTestList = FromListOfStringsToListOfIntegers.transformFromListOfStringsToListOfIntegers();
+        List<Integer> integerTestList = NumbersReader.transformFromListOfStringsToListOfIntegers();
         Map<Integer, Integer> testMap = new TreeMap<>();
         for (Integer numbersToGetConverted : integerTestList) {
             Integer count = testMap.get(numbersToGetConverted);
