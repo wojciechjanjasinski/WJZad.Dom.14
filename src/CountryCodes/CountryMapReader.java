@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import static CountryCodes.CountryInfoUtils.displayCountryInfo;
+
 public class CountryMapReader {
     static String fileName = "CountriesInfo.csv";
     public static Map<String, Country> fromFileToMap() throws FileNotFoundException {
@@ -18,4 +20,5 @@ public class CountryMapReader {
         }
         return hashMapOfCountries;
     }
+
 }
